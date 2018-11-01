@@ -1,4 +1,4 @@
-<?php
+<<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +13,22 @@
 
 //Route::get('/', ['as'=>'home.index', 'uses'=>'HomeController@index']);
 Route::get('/', 'HomeController@index')->name('home.index');
-Route::get('say/{name?}', ['as'=>'hello.index', function ($name='Everybody') {    return 'Hello, '.$name;
+
+Route::get('welcome', function () {
+    return view('welcome');
+});
+
+Route::get('say/{name?}', ['as'=>'hello.index', function ($name='Everybody') {
+    return 'Hello, '.$name;
 }]);
+
+Route::get('dashboard', function () {
+    return 'dashboard';
+});
+
 Route::group(['prefix'=>'admin'], function () {
     Route::get('dashboard', function () {
-        return 'dashboard';
+        return 'admin dashboard';
     });
+
 });
