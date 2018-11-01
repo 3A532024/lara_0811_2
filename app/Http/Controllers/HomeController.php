@@ -12,7 +12,7 @@ class HomeController extends Controller
 */
     public function index()
     {
-        return 'index';
+        return view('welcome');
     }
     /**
      * Show the form for creating a new resource.
